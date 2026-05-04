@@ -6,26 +6,23 @@ This is the **official implementation** of the project **"PiCA: Pivot-Based Cred
 ---
 
 ## 💡 Overview
+**PiCA** (Pivot-Based Credit Assignment) is a step-reward mechanism for RL-trained LLM search agents. It reformulates search trajectories as a sequential process of cumulative information gain.
 
-**PiCA** is a reinforcement learning (RL) framework designed to optimize the search and multi-hop reasoning capabilities of Large Language Model (LLM) agents. The core of the framework is the **Pivot-Based Credit Assignment (PiCA)** mechanism, which addresses the challenges of sparse rewards in complex reasoning trajectories.
 
-### Key Contributions:
-*   **PiCA Reward Mechanism**: A novel step-reward approach that identifies and prioritizes "Pivot Steps" with high information gain.
-*   **Large-Scale Dataset**: Includes a step-labeled dataset based on **MuSiQue**, consisting of approximately 60,000 samples for training reasoning agents.
-*   **Scalability**: Proven effective across multiple model scales and architectures, including the **Qwen** and **Llama** families.
-*   **High-Performance Integration**: Fully compatible with distributed training frameworks like **OpenRLHF**, **Ray**, **DeepSpeed**, and **vLLM**.
-
+### Key Contributions
+*   **Pivot-Annotated Dataset**: A large-scale dataset of 60k trajectories (based on MuSiQue) with precise annotations of critical "pivot" steps.
+*   **Novel Credit Assignment**: A framework where rewards are determined by information peaks relative to the entire search history, solving the issues of reward sparsity and isolated credit.
+*   **State-of-the-Art Results**: Consistent improvements across 7 multi-hop QA benchmarks, achieving a 15.2% performance boost for 3B models and 2.2% for 7B models.
 ---
 
 ## 📂 Project Structure
 
 ```text
 Search-R1/
-├── OpenRLHF/                # Customized OpenRLHF for agentic RL training
-├── Search-R1/
-│   ├── data/                # ~60k step-labeled MuSiQue dataset
-│   ├── models/              # PiCA reward model and policy definitions
-│   └── utils/               # Trajectory parsing and pivot step detection
+├── OpenRLHF/               # Customized OpenRLHF for PiCA reward model training
+├── Search-R1/               
+│   ├── search_r1/          # search agent tools 
+│   └── verl/               # PiCA reward function + policy training
 ```
 
 ---
