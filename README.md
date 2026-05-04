@@ -27,38 +27,50 @@ Search-R1/
 
 ---
 
-## 🚀 Quick Start
-
-### 1. Setup & Environment
+## Installation
 
 **Requirements:**
 * Python 3.10+
 * CUDA 12.1+
 
-**Installation:**
 ```bash
-# Clone the repository with submodules
-git clone --recursive https://github.com/YourUsername/Search-R1.git
-cd Search-R1/OpenRLHF
+conda create -n pica python=3.11
+conda activate pica
+conda install -c pytorch -c nvidia faiss-gpu=1.8.0
+pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+# install vllm
+pip3 install vllm==0.6.3 # or you can install 0.5.4, 0.4.2 and 0.3.1
+
+# verl
 pip install -e .
-pip install -r ../requirements.txt
+
+# flash attention 2
+pip3 install flash-attn --no-build-isolation
+pip install wandb
 ```
-
-### 2. Configuration
-- Update the `DATA_PATH` and `MODEL_PATH` in the execution scripts located in `scripts/`.
-- Ensure your environment is configured for distributed training via **Ray** and **DeepSpeed**.
-
-### 3. Launch Training
-The training process typically involves starting the inference engine and then launching the RL pipeline:
+## 🚀 Quick Start
+**Launch a local retrieval server.**
 ```bash
-cd scripts
-# Start the vLLM engine for the reward model
-bash start_vllm_engine.sh
-
-# Launch the PiCA-based policy optimization
-bash run_pica_rl.sh
+cd Search-R1
+bash retrieval_launch.sh
 ```
-
+**Train PiCA reward model with qwen2.5-3b-instruct.**
+```bash
+conda activate pica
+cd OpenRLHF
+bash examples/scripts/train_prm_mistral.sh
+```
+**Launch PiCA reward model.**
+```bash
+cd OpenRLHF
+bash example/script/serve_remote_rm.sh
+```
+**Run RL training (PPO) with qwen2.5-7b-instruct.**
+```bash
+conda activate pica
+cd Search-R1
+bash train_ppo.sh
+```
 ---
 
 ## 📊 Evaluation
