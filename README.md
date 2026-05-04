@@ -85,8 +85,8 @@ bash Search-R1/eval.sh
 ## 🤗 Models & Checkpoints
 
 We provide checkpoints optimized for search tasks:
-* **Search-R1-Qwen2.5-7B**: Base policy model optimized for general search.
-* **Search-R1-Llama3.1-8B**: High-performance reasoning model.
-* **PiCA-RM-Qwen-4B**: The step-level reward model utilizing Pivot-Based Credit Assignment.
+* **PiCA-Qwen2.5-3B**: Base policy model optimized for general search.
+* **PiCA-Qwen2.5-7B**: Base policy model optimized for general search.
+* **PiCA-RM-Qwen2.5-3B**: The step-level reward model utilizing Pivot-Based Credit Assignment.
 
 ---
