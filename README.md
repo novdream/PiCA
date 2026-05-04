@@ -81,7 +81,41 @@ bash Search-R1/eval.sh
 ```
 
 ---
+## 📊 Dataset
+The PiCA-MuSiQue dataset, consisting of 60k search trajectories with precise pivot step annotations, will be **released upon paper acceptance**.
 
+Below is a sample showing the trajectory structure and pivot labeling:
+```
+{
+  "question": "When did the alma mater of William C. Perry start issuing engineering degrees?",
+  "trajectory": [
+    {
+      "step": 1,
+      "observation": None,
+      "think": <think>I need to parse the question: "When did the alma mater of William C. Perry start issuing engineering degrees?" First, I need to identify who William C. Perry is. Likely William C. Perry is a notable person, possibly a former US Secretary of Defense (William Perry, served 1994-1997). His full name is William James Perry, but sometimes referred to as William C. Perry? Actually, William Perry's middle name is James, not C. Maybe it's a different William C. Perry. Could be William C. Perry, maybe an academic or engineer. Let's search for William C. Perry to confirm. </think>
+      "action": <search>William C. Perry alma mater</search>,
+      "is_pivot": true,
+    },
+    {
+      "step": 2,
+      "observation": <information>Doc 1 (Title: William C. Perry)... Doc 2 (Title: Perry Belmont)... Doc 3 (Title: William Perry (American football))... </information>,
+      "think": <think>The search results show a William C. Perry who graduated from the University of Kansas in 1922. That's likely the person in question. So his alma mater is the University of Kansas. The question asks: "When did the alma mater of William C. Perry start issuing engineering degrees?" So we need to find when the University of Kansas started issuing engineering degrees. We need to search for the history of engineering degrees at the University of Kansas. </think>
+      "action": <search>University of Kansas start issuing engineering degrees</search>,
+      "is_pivot": true,
+      
+    }
+    {
+      "step": 3,
+      "observation": <information>Doc 1 (Title: University of Kansas)... Doc 2 (Title: University of Kansas)... Doc 3 (Title: University of Kansas)... </information>,
+      "think": None
+      "action": <answer>1873</answer>,
+      "is_pivot": true,
+      
+    }
+  ],
+  "final_answer": "1873"
+}
+```
 ## 🤗 Models & Checkpoints
 
 We provide checkpoints optimized for search tasks:
