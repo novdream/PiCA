@@ -1,16 +1,13 @@
-以下是为您准备的 **Search-R1** 项目 README 模板，采用了 Markdown 格式并严格参考了您提供的 NSPO 风格进行排版：
 
----
+# PiCA: Pivot-Based Credit Assignment For Search Agentic Reinforcement Learning
 
-# Search-R1: Reinforcement Learning for Search Agents via Pivot-Based Credit Assignment
-
-This is the **official implementation** of the project **"Search-R1: Enhancing Multi-hop Reasoning for Search Agents with Pivot-Based Credit Assignment"** (Targeting NeurIPS 2026).
+This is the **official implementation** of the project **"PiCA: Pivot-Based Credit Assignment For Search Agentic Reinforcement Learning"**.
 
 ---
 
 ## 💡 Overview
 
-**Search-R1** is a reinforcement learning (RL) framework designed to optimize the search and multi-hop reasoning capabilities of Large Language Model (LLM) agents. The core of the framework is the **Pivot-Based Credit Assignment (PiCA)** mechanism, which addresses the challenges of sparse rewards in complex reasoning trajectories.
+**PiCA** is a reinforcement learning (RL) framework designed to optimize the search and multi-hop reasoning capabilities of Large Language Model (LLM) agents. The core of the framework is the **Pivot-Based Credit Assignment (PiCA)** mechanism, which addresses the challenges of sparse rewards in complex reasoning trajectories.
 
 ### Key Contributions:
 *   **PiCA Reward Mechanism**: A novel step-reward approach that identifies and prioritizes "Pivot Steps" with high information gain.
@@ -29,14 +26,6 @@ Search-R1/
 │   ├── data/                # ~60k step-labeled MuSiQue dataset
 │   ├── models/              # PiCA reward model and policy definitions
 │   └── utils/               # Trajectory parsing and pivot step detection
-├── evaluation/              # Benchmark evaluation scripts (MuSiQue, Search-QA)
-│   ├── eval_musique.py
-│   └── search_bench.py
-├── scripts/                 # Training and deployment scripts
-│   ├── run_pica_rl.sh       # Main RL training execution
-│   ├── train_reward_model.sh
-│   └── start_vllm_engine.sh
-└── requirements.txt
 ```
 
 ---
