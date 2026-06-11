@@ -124,3 +124,18 @@ We provide checkpoints optimized for search tasks:
 * **[PiCA-RM-Qwen2.5-3B](https://huggingface.co/NeurIPS2026PiCA/PiCA-RM-Qwen2.5-3B)**: The step-level reward model utilizing Pivot-Based Credit Assignment.
 
 ---
+
+## ✍️ Citation
+
+If you find this work helpful for your research, please cite our paper:
+```
+@misc{liu2026picapivotbasedcreditassignment,
+      title={PiCA: Pivot-Based Credit Assignment for Search Agentic Reinforcement Learning}, 
+      author={Dongyi Liu and Yifan Niu and Qinwen Wang and Han Xiao and Jia Li},
+      year={2026},
+      eprint={2605.09287},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2605.09287}, 
+}
+```
