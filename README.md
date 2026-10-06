@@ -1,10 +1,6 @@
 
 # PiCA: Pivot-Based Credit Assignment For Search Agentic Reinforcement Learning
 
-This is the **official implementation** of the project **"PiCA: Pivot-Based Credit Assignment For Search Agentic Reinforcement Learning"**.
-
----
-
 ## 💡 Overview
 **PiCA** (Pivot-Based Credit Assignment) is a step-reward mechanism for RL-trained LLM search agents. It reformulates search trajectories as a sequential process of cumulative information gain.
 
