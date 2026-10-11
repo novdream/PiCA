@@ -8,7 +8,7 @@
 ### Key Contributions
 *   **Pivot-Annotated Dataset**: A large-scale dataset of 60k trajectories (based on MuSiQue) with precise annotations of critical "pivot" steps.
 *   **Novel Credit Assignment**: A framework where rewards are determined by information peaks relative to the entire search history, solving the issues of reward sparsity and isolated credit.
-*   **State-of-the-Art Results**: Consistent improvements across 7 multi-hop QA benchmarks, achieving a 15.2% performance boost for 3B models and 2.2% for 7B models.
+*   **State-of-the-Art Results**: Consistent improvements across 7 multi-hop QA benchmarks, achieving a 15.2% performance boost for 3B models and 4.4% for 7B models.
 ---
 
 ## 📂 Project Structure
